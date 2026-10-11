@@ -34,8 +34,8 @@ const members = [
     ign: "SYNDCT・James.",
     realName: "JAMES NODA",
     playerId: "[Add player ID]",
-    favoriteWeapon: "N/A",
-    role: "Squad Admin",
+    favoriteWeapon: "AWM",
+    role: "Squad ADMIN",
     winningsImages: [
       "images/winnings/member-02/win-01.png"
     ]
