@@ -16,7 +16,7 @@ const members = [
     number: "01",
     ign: "SYNDCT・xenzui.",
     realName: "LAWRENCE LABRA",
-    playerId: "[Add player ID]",
+    playerId: "1548701",
     favoriteWeapon: "AWM + PP19",
     role: "Group Leader",
     leader: true,
@@ -31,11 +31,11 @@ const members = [
 
   {
     number: "02",
-    ign: "Member 02",
-    realName: "[Add real name]",
+    ign: "SYNDCT・James.",
+    realName: "JAMES NODA",
     playerId: "[Add player ID]",
-    favoriteWeapon: "[Add favorite weapon]",
-    role: "Squad Member",
+    favoriteWeapon: "N/A",
+    role: "Squad Admin",
     winningsImages: [
       "images/winnings/member-02/win-01.png"
     ]
