@@ -235,7 +235,7 @@ h2 {
   letter-spacing: 0;
 }
 
-/* Membership requirement */
+/* Membership requirements */
 .requirements-section {
   max-width: none;
   border-block: 1px solid var(--line);
@@ -407,7 +407,7 @@ h2 {
 .winnings-placeholder { border-color: var(--line); color: var(--muted); background: transparent; }
 .winnings-placeholder:hover { border-color: var(--red); color: #fff; background: rgba(189,23,36,.35); }
 
-/* Winnings image modal */
+/* Landscape winnings gallery */
 .winnings-modal { position: fixed; inset: 0; z-index: 100; display: none; padding: 22px; }
 .winnings-modal.is-open { display: grid; place-items: center; }
 .winnings-modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.84); backdrop-filter: blur(7px); }
@@ -462,7 +462,7 @@ h2 {
 .winnings-image-link:hover { border-color: var(--red); }
 .winnings-image-link img { display: block; width: 100%; height: 100%; object-fit: contain; background: #050505; }
 
-/* Application */
+/* Application form */
 .apply-section {
   max-width: none;
   border-block: 1px solid var(--line);
