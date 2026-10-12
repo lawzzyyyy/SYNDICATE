@@ -1,8 +1,23 @@
-// Replace the placeholders with approved member details.
-// Add screenshot paths under images/winnings/member-XX/ in each member object.
+// Member 01 links to the five winnings images already in your GitHub folder.
+// Add each member's screenshot paths in that member's winningsImages array.
 
 const members = [
-  { number: "01", ign: "SYNDCT・xenzui.", realName: "[Add real name]", playerId: "[Add player ID]", favoriteWeapon: "[Add favorite weapon]", role: "Group Leader", leader: true, winningsImages: [] },
+  {
+    number: "01",
+    ign: "SYNDCT・xenzui.",
+    realName: "[Add real name]",
+    playerId: "[Add player ID]",
+    favoriteWeapon: "[Add favorite weapon]",
+    role: "Group Leader",
+    leader: true,
+    winningsImages: [
+      "images/winnings/member-01/win-01.png",
+      "images/winnings/member-01/win-02.png",
+      "images/winnings/member-01/win-03.png",
+      "images/winnings/member-01/win-04.png",
+      "images/winnings/member-01/win-05.png"
+    ]
+  },
   { number: "02", ign: "Member 02", realName: "[Add real name]", playerId: "[Add player ID]", favoriteWeapon: "[Add favorite weapon]", role: "Squad Member", winningsImages: [] },
   { number: "03", ign: "Member 03", realName: "[Add real name]", playerId: "[Add player ID]", favoriteWeapon: "[Add favorite weapon]", role: "Squad Member", winningsImages: [] },
   { number: "04", ign: "Member 04", realName: "[Add real name]", playerId: "[Add player ID]", favoriteWeapon: "[Add favorite weapon]", role: "Squad Member", winningsImages: [] },
@@ -24,20 +39,20 @@ const members = [
   { number: "20", ign: "Member 20", realName: "[Add real name]", playerId: "[Add player ID]", favoriteWeapon: "[Add favorite weapon]", role: "Squad Member", winningsImages: [] }
 ];
 
-/* Create roster cards */
+/* Render roster */
 const memberGrid = document.getElementById("memberGrid");
 
 function createMemberCard(member) {
   const card = document.createElement("article");
   card.className = member.leader ? "member leader" : "member";
 
-  const screenshots = member.winningsImages || [];
+  const images = member.winningsImages || [];
 
-  const winningsButton = screenshots.length
+  const winningsButton = images.length
     ? `<button class="winnings-link" type="button"
-         data-winnings='${JSON.stringify(screenshots)}'
+         data-winnings='${JSON.stringify(images)}'
          data-member="${member.ign}">
-         VIEW WINNINGS (${screenshots.length}) <span aria-hidden="true">↗</span>
+         VIEW WINNINGS (${images.length}) <span aria-hidden="true">↗</span>
        </button>`
     : `<button class="winnings-link winnings-placeholder" type="button"
          data-member="${member.ign}">
@@ -162,7 +177,7 @@ copyIgnButton.addEventListener("click", async () => {
   }
 });
 
-/* Application qualification: Yes continues; No is not qualified */
+/* Application qualification flow */
 const canChangeName = document.getElementById("canChangeName");
 const notQualifiedMessage = document.getElementById("notQualifiedMessage");
 const changeNameNotice = document.getElementById("changeNameNotice");
@@ -177,7 +192,7 @@ canChangeName.addEventListener("change", () => {
   applicationForm.hidden = !qualified;
 });
 
-/* Check the required tag before the application submits */
+/* Enforce the required SYNDCT・ prefix */
 applicationForm.addEventListener("submit", (event) => {
   const ignInput = document.getElementById("newIgn");
   const currentIgn = ignInput.value.trim();
@@ -210,3 +225,10 @@ navLinks.querySelectorAll("a").forEach((link) => {
     menuToggle.setAttribute("aria-expanded", "false");
   });
 });
+
+/* Attempt video playback; poster remains as fallback if unavailable */
+const heroVideo = document.querySelector(".hero-video");
+
+if (heroVideo) {
+  heroVideo.play().catch(() => {});
+}
